@@ -23,7 +23,6 @@ void Engine::start() {
     while (window.isOpen()) {
         Event event;
         
-        float lastTime = 0;
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close();
@@ -32,8 +31,7 @@ void Engine::start() {
         
         Time newTime = clock.restart();
         
-        float currentTime = newTime.asMilliseconds();
-        float deltaTime = currentTime - lastTime;
+        float deltaTime = newTime.asSeconds() * 100;
         
         update(deltaTime);
     }

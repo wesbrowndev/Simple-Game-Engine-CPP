@@ -9,7 +9,7 @@
 #include "Player.hpp"
 
 Player::Player() {
-    speed = 0.5;
+    speed = 3;
     
     texture.loadFromFile("player.png");
     sprite.setTexture(texture);
